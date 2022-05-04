@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
 
     def index 
-        render plain: 'Dave and veras first rails request'
+        # render plain: 'Dave and veras first rails request'
+        @users = User.all
+        render json: @users
     end
 
     def create
