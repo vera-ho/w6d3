@@ -24,7 +24,6 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :email)
     end
 
-
     def update
         user = User.find(params[:id])
         if user.update(user_params)
