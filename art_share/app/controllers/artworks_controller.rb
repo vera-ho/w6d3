@@ -31,11 +31,12 @@ class ArtworksController < ApplicationController
     end
 
     def destroy
-        debugger
+        # debugger
         artwork = Artwork.find(params[:id])
 
         if artwork.destroy
-            redirect_to artworks_url
+            render json: artwork
+            # redirect_to artworks_url
         else
             render json: 'cant delete artpiece'
         end
